@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <title>I am 搭噗ü</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            font-family: "Comic Sans MS";
+        }
+        
+        #menu_control {
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+        
+        .header {
+            height: 50px;
+            background-color: #b3d1ff;
+            /*縮小後上方顏色*/
+            position: relative;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        
+        .menu_btn {
+            width: 40px;
+            height: 40px;
+            /*background-color: white;*/
+            display: block;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+        
+        .menu_btn span {
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            display: block;
+            overflow: hidden;
+        }
+        
+        .menu_btn::before {
+            content: " ";
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: blueviolet;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px blueviolet, 0px -8px 0px blueviolet;
+        }
+        
+        nav {
+            width: 100%;
+            height: calc(100vh-50px);
+            background-color: #a59bfa;
+            /*漢堡式選單色*/
+            position: absolute;
+            top: 50px;
+            left: -120%;
+            transition: .5s;
+        }
+        
+        nav a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            border-bottom: 1px solid white;
+            font-family: "Comic Sans MS";
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            background-color: #698cb5
+        }
+        
+        #menu_control:checked~.header nav {
+            left: 0;
+        }
+        
+        marquee {
+            color: rgba(255, 255, 255, 0)
+        }
+        
+        .footer {
+            background-color: #333;
+            color: #aaa;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .two {
+            margin: 60px 0;
+        }
+        
+        img {
+            vertical-align: bottom;
+        }
+        
+        .group {
+            width: 100%;
+            margin: auto;
+        }
+        
+        .item {
+            margin: 0 10px 40px;
+        }
+        
+        .bg img {
+            width: 0%;
+        }
+        
+        .bn img {
+            width: 100%;
+        }
+        
+        .title h3 {
+            text-align: center;
+            font-size: 22px;
+            font-family: "Microsoft JhengHei"
+        }
+        
+        .title {
+            margin: 0 0px 10px;
+            padding: 20px 10px;
+            background-color: #aaa;
+        }
+        
+        .title p {
+            font-size: 15px;
+            text-align: center;
+            font-family: "Microsoft JhengHei"
+        }
+        
+        .item .text h3 {
+            font-size: 30px;
+            text-align: center;
+        }
+        
+        .item .pic img {
+            width: 100%;
+        }
+        
+        .footer img {
+            width: 3.5%;
+        }
+        
+        .footer p {
+            color: white;
+        }
+        
+        .text p {
+            text-align: center;
+            font-size: 22px;
+            font-family: "Microsoft JhengHei";
+            font-weight: bold;
+            color: rgb(27, 19, 54);
+        }
+        
+        .text {
+            background-color: rgb(144, 165, 187);
+        }
+        
+        @media screen and (min-width: 680px) {
+            .menu_btn {
+                display: none;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                background-color: #b3d1ff;
+                align-items: center;
+            }
+            nav {
+                position: relative;
+                left: 0;
+                display: flex;
+                width: auto;
+                height: auto;
+                top: 0;
+                background-color: transparent;
+            }
+            nav a {
+                border-bottom: none;
+            }
+            nav a:hover {
+                background-color: #b3d1ff;
+                color: rgb(43, 43, 250);
+            }
+            marquee {
+                color: rgb(43, 43, 250)
+            }
+            .group {
+                display: flex;
+            }
+            .title h3 {
+                text-align: center;
+                font-size: 40px;
+            }
+            .title p {
+                font-size: 22px;
+                text-align: center;
+            }
+            .bg img {
+                width: 100%;
+            }
+            .bn img {
+                width: 100%;
+                display: none;
+            }
+            .item .pic img {
+                width: 100%;
+            }
+            .footer img {
+                width: 1.6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="menu_control">
+    <div class="header">
+        <h1 class="logo">
+            <a href="#">WPY</a>
+        </h1>
+        <label for="menu_control" class="menu_btn">
+            <span>選單</span>
+        </label>
+        <nav>
+            <a href="# ">home</a>
+            <a href="photo.html">photo</a>
+            <a href="w.html">about w</a>
+        </nav>
+    </div>
+    <marquee direction="right" height="30" scrollamount="5" behavior="alternate">Hi~I'm w</marquee>
+    <div class="bg">
+        <img src="photo/IMG_4888.PNG">
+    </div>
+    <div class="bn">
+        <img src="photo/IMG_4885.PNG">
+    </div>
+
+    <div class="wrap ">
+        <div class="title">
+            <h3><b>關於 搭噗ü</b></h3>
+            <br>
+            <p><b>搭噗ü  (w)  /  謎之小恐龍(?<br>誕生於2017年，高一計概課太無聊，在課本上的塗鴉。(๑´ㅂ`๑)</b></p>
+        </div>
+
+        <div class="group">
+
+            <div class="item ">
+                <div class="pic ">
+                    <a href="photo/IMG_5248.PNG"><img src="photo/IMG_5247.PNG"></a>
+                </div>
+                <div class="text ">
+                    <h3>chips</h3>
+                    <p>要一起吃餅乾嗎ʕ￫ᴥ￩ʔ</p>
+                </div>
+            </div>
+
+            <div class="item ">
+                <div class="pic ">
+                    <img src="photo/IMG_5247.PNG">
+                </div>
+                <div class="text ">
+                    <h3>title</h3>
+                    <p>嗨</p>
+                </div>
+            </div>
+
+            <div class="item ">
+                <div class="pic ">
+                    <img src="photo/IMG_5247.PNG">
+                </div>
+                <div class="text ">
+                    <h3>title</h3>
+                    <p>嗨</p>
+                </div>
+            </div>
+
+            <div class="item ">
+                <div class="pic ">
+                    <img src="photo/IMG_5247.PNG">
+                </div>
+                <div class="text ">
+                    <h3>title</h3>
+                    <p>嗨</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+            <p><img src="photo/ig.PNG">wpy_www &nbsp&nbsp&nbsp&copy;wpy2020</p>
+
+
+        </div>
+
+</body>
+
+</html>
