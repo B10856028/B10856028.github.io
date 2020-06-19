@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <title>photo</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            font-family: "Comic Sans MS";
+        }
+        
+        #menu_control {
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+        
+        .header {
+            height: 50px;
+            background-color: #b3d1ff;
+            /*縮小後上方顏色*/
+            position: relative;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        
+        .menu_btn {
+            width: 40px;
+            height: 40px;
+            /*background-color: white;*/
+            display: block;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+        
+        .menu_btn span {
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            display: block;
+            overflow: hidden;
+        }
+        
+        .menu_btn::before {
+            content: " ";
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: blueviolet;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px blueviolet, 0px -8px 0px blueviolet;
+        }
+        
+        nav {
+            width: 100%;
+            height: calc(100vh-50px);
+            background-color: #a59bfa;
+            /*漢堡式選單色*/
+            position: absolute;
+            top: 50px;
+            left: -120%;
+            transition: .5s;
+        }
+        
+        nav a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            border-bottom: 1px solid white;
+            font-family: "Comic Sans MS";
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            background-color: #698cb5
+        }
+        
+        #menu_control:checked~.header nav {
+            left: 0;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: #aaa;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        summary {
+            width: 100%;
+        }
+        
+        summary img {
+            width: 100%;
+        }
+        
+        img {
+            width: 99%;
+            padding: 2px;
+        }
+        
+        .one {
+            width: 70%;
+            margin: auto;
+        }
+        
+        .two {
+            width: 70%;
+            margin: auto;
+        }
+        
+        .three {
+            width: 70%;
+            margin: auto;
+        }
+        
+        .web {
+            display: none;
+        }
+        
+        .o {
+            width: 70%;
+            margin: auto;
+        }
+        
+        @media screen and (min-width: 680px) {
+            .menu_btn {
+                display: none;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                background-color: #b3d1ff;
+                align-items: center;
+            }
+            nav {
+                position: relative;
+                left: 0;
+                display: flex;
+                width: auto;
+                height: auto;
+                top: 0;
+                background-color: transparent;
+            }
+            nav a {
+                border-bottom: none;
+            }
+            nav a:hover {
+                background-color: #b3d1ff;
+                color: rgb(43, 43, 250);
+            }
+            .one {
+                display: flex;
+                width: 50%;
+                margin-left: 0px;
+            }
+            .two {
+                display: flex;
+                width: 25%;
+                margin-left: 0px;
+            }
+            .three {
+                display: flex;
+                width: 34%;
+                margin-left: 0px;
+            }
+            .o {
+                width: 50%;
+                margin-left: 0px;
+            }
+            .c {
+                width: 60%;
+                display: block;
+                padding-left: 100px;
+            }
+            .a {
+                width: 80%;
+                padding-left: 100px;
+            }
+            body {
+                background-color: rgb(205, 247, 236);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="menu_control">
+    <div class="header">
+        <h1 class="logo">
+            <a href="#">WPY</a>
+        </h1>
+        <label for="menu_control" class="menu_btn">
+            <span>選單</span>
+        </label>
+        <nav>
+            <a href="# ">home</a>
+            <a href="photo.html">photo</a>
+            <a href="w.html">about w</a>
+        </nav>
+    </div>
+
+    <div class="section">
+        <div class="web"><img src="photo/n-1.PNG"></div>
+        <details>
+            <summary class="a"><img src="photo/n.JPG"></summary>
+            <details>
+                <summary class="c">
+                    <div class="o"><img src="photo/m.JPG"></div>
+                </summary>
+                <div class="one">
+                    <img src="photo/mis-1.JPG">
+                    <img src="photo/mis-2.JPG">
+                </div>
+            </details>
+            <details>
+                <summary class="c">
+                    <div class="o"><img src="photo/p3.JPG"></div>
+                </summary>
+                <div class="two">
+                    <img src="photo/p3-1.JPG">
+                    <img src="photo/p3-2.JPG">
+                    <img src="photo/p3-3.JPG">
+                    <img src="photo/p3-4.JPG">
+                </div>
+                <div class="two">
+                    <img src="photo/p3-5.JPG">
+                    <img src="photo/p3-6.JPG">
+                    <img src="photo/p3-7.JPG">
+                    <img src="photo/p3-8.JPG">
+                </div>
+            </details>
+        </details>
+
+
+        <div class="web"><img src="photo/a-1.PNG"></div>
+        <details>
+            <summary class="a"><img src="photo/a.JPG"></summary>
+            <details>
+                <summary class="c">
+                    <div class="o"><img src="photo/110.JPG"></div>
+                </summary>
+                <div class="two">
+                    <img src="photo/110-1.JPG">
+                    <img src="photo/110-2.JPG">
+                    <img src="photo/110-3.JPG">
+                    <img src="photo/110-4.JPG"></div>
+                <div class="two">
+                    <img src="photo/110-5.JPG">
+                    <img src="photo/110-6.JPG">
+                    <img src="photo/110-7.JPG">
+                    <img src="photo/110-8.JPG"></div>
+                <div class="two">
+                    <img src="photo/110-9.JPG">
+                    <img src="photo/110-10.JPG">
+                    <img src="photo/110-11.JPG">
+                    <img src="photo/110-12.JPG"></div>
+            </details>
+            <details>
+                <summary class="c">
+                    <div class="o"><img src="photo/303.JPG"></div>
+                </summary>
+                <div class="two"><img src="photo/303-1.JPG">
+                    <img src="photo/303-2.JPG">
+                    <img src="photo/303-3.JPG">
+                    <img src="photo/303-4.JPG"></div>
+                <div class="two">
+                    <img src="photo/303-5.JPG">
+                    <img src="photo/303-6.JPG">
+                    <img src="photo/303-7.JPG">
+                    <img src="photo/303-8.JPG"></div>
+                <div class="two">
+                    <img src="photo/303-9.JPG">
+                    <img src="photo/303-10.JPG">
+                    <img src="photo/303-11.JPG">
+                    <img src="photo/303-12.JPEG"></div>
+            </details>
+            <details>
+                <summary class="c">
+                    <div class="o"><img src="photo/10.JPG"></div>
+                </summary>
+                <div class="three"><img src="photo/10-1.JPG">
+                    <img src="photo/10-2.JPG">
+                    <img src="photo/10-3.JPG"></div>
+                <div class="three">
+                    <img src="photo/10-4.JPG">
+                    <img src="photo/10-5.JPG">
+                    <img src="photo/10-6.JPG"></div>
+                <div class="three">
+                    <img src="photo/10-7.JPG">
+                    <img src="photo/10-8.JPG">
+                    <img src="photo/10-9.JPG"></div>
+            </details>
+            <details>
+                <summary class="c">
+                    <div class="o"><img src="photo/3.JPG"></div>
+                </summary>
+                <div class="three"><img src="photo/3-1.JPG">
+                    <img src="photo/3-2.JPG">
+                    <img src="photo/3-3.JPG"></div>
+                <div class="three">
+                    <img src="photo/3-4.JPG">
+                    <img src="photo/3-5.JPG">
+                    <img src="photo/3-6.JPG"></div>
+                <div class="three">
+                    <img src="photo/3-7.JPG">
+                    <img src="photo/3-8.JPG">
+                    <img src="photo/3-9.JPG"></div>
+            </details>
+        </details>
+
+        <div class="web"><img src="photo/fsjh-1.PNG"></div>
+        <details>
+            <summary class="a"><img src="photo/fsjh.JPG"></summary>
+            <details>
+                <summary class="c">
+                    <div class="o"><img src="photo/329.JPG"></div>
+                </summary>
+                <div class="two"><img src="photo/329-1.JPG">
+                    <img src="photo/329-2.JPG">
+                    <img src="photo/329-3.JPG">
+                    <img src="photo/329-4.JPG"></div>
+                <div class="two">
+                    <img src="photo/329-5.JPG">
+                    <img src="photo/329-6.JPG">
+                    <img src="photo/329-7.JPG">
+                    <img src="photo/329-8.JPG"></div>
+                <div class="two">
+                    <img src="photo/329-9.JPG">
+                    <img src="photo/329-10.JPG">
+                    <img src="photo/329-11.JPG">
+                    <img src="photo/329-12.JPG"></div>
+                <div class="two">
+                    <img src="photo/329-13.JPG">
+                    <img src="photo/329-14.JPG">
+                    <img src="photo/329-15.JPG">
+                    <img src="photo/329-16.JPG"></div>
+            </details>
+            <details>
+                <summary class="c">
+                    <div class="o"><img src="photo/29.JPG"></div>
+                </summary>
+                <div class="two"><img src="photo/29-1.JPG">
+                    <img src="photo/29-2.JPG">
+                    <img src="photo/29-3.JPG">
+                    <img src="photo/29-4.JPG"></div>
+                <div class="two">
+                    <img src="photo/29-5.JPG">
+                    <img src="photo/29-6.JPG">
+                    <img src="photo/29-7.JPG">
+                    <img src="photo/29-8.JPG"></div>
+            </details>
+        </details>
+
+        <div class="web"><img src="photo/family-1.PNG"></div>
+        <details>
+            <summary class="a"><img src="photo/family.JPG"></summary>
+            <details>
+                <summary class="c">
+                    <div class="o"><img src="photo/l.JPG"></div>
+                </summary>
+                <div class="three"><img src="photo/l-1.JPG">
+                    <img src="photo/l-2.JPG">
+                    <img src="photo/l-3.JPG"></div>
+                <div class="three">
+                    <img src="photo/l-4.JPG">
+                    <img src="photo/l-5.JPG">
+                    <img src="photo/l-6.JPG"></div>
+                <div class="three">
+                    <img src="photo/l-7.JPG">
+                    <img src="photo/l-8.JPG">
+                    <img src="photo/l-9.JPG"></div>
+            </details>
+            <details>
+                <summary class="c">
+                    <div class="o"><img src="photo/mom.JPG"></div>
+                </summary>
+                <div class="three"><img src="photo/mom-1.JPG">
+                    <img src="photo/mom-2.JPG">
+                    <img src="photo/mom-3.JPG"></div>
+                <div class="three">
+                    <img src="photo/mom-4.JPG">
+                    <img src="photo/mom-5.JPG">
+                    <img src="photo/mom-6.JPG"></div>
+                <div class="three">
+                    <img src="photo/mom-7.JPG">
+                    <img src="photo/mom-8.JPG">
+                    <img src="photo/mom-9.JPG"></div>
+            </details>
+            <details>
+                <summary class="c">
+                    <div class="o"><img src="photo/dad.JPG"></div>
+                </summary>
+                <div class="two"><img src="photo/dad-2.JPG">
+                    <img src="photo/dad-4.JPG">
+                    <img src="photo/dad-5.JPG">
+                    <img src="photo/dad-6.JPG"></div>
+                <div class="two">
+                    <img src="photo/dad-7.JPG">
+                    <img src="photo/dad-8.JPG">
+                    <img src="photo/dad-10.JPG">
+                    <img src="photo/dad-11.JPG"></div>
+                <div class="two">
+                    <img src="photo/dad-12.JPG">
+                    <img src="photo/dad-13.JPG">
+                    <img src="photo/dad-14.JPG">
+                    <img src="photo/dad-15.JPG"></div>
+            </details>
+        </details>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <div class="footer ">
+        <p>&copy;wpy2020 </p>
+    </div>
+
+</body>
+
+</html>
