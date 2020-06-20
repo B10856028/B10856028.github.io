@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <title>Home</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            font-family: "Comic Sans MS";
+            box-sizing: border-box;
+        }
+        
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+            width: 100%;
+            border: 2px solid rgb(138, 136, 138);
+            border-radius: 5px;
+            margin: 0.5%;
+        }
+        
+        @media only screen and (min-width:600px) {
+            .col-s-1 {
+                display: none;
+            }
+            .col-s-2 {
+                width: 16.66%;
+            }
+            .col-s-3 {
+                width: 24%;
+            }
+            .col-s-4 {
+                width: 34%;
+            }
+            .col-s-5 {
+                width: 36%;
+            }
+            .col-s-6 {
+                width: 49%;
+            }
+            .col-s-7 {
+                width: 62%;
+            }
+            .col-s-8 {
+                width: 64%;
+            }
+            .col-s-9 {
+                width: 75%;
+            }
+            .col-s-10 {
+                width: 83.33%;
+            }
+            .col-s-11 {
+                width: 91%;
+            }
+            .col-s-12 {
+                width: 99%;
+            }
+        }
+        
+        @media only screen and (min-width: 768px) {
+            .col-1 {
+                width: 0%;
+            }
+            .col-2 {
+                width: 16.66%;
+            }
+            .col-3 {
+                width: 24%;
+            }
+            .col-4 {
+                width: 34%;
+            }
+            .col-5 {
+                width: 36%;
+                display: block;
+            }
+            .col-6 {
+                width: 49%;
+            }
+            .col-7 {
+                width: 62%;
+            }
+            .col-8 {
+                width: 64%;
+            }
+            .col-9 {
+                width: 75%;
+            }
+            .col-10 {
+                width: 83.33%;
+            }
+            .col-11 {
+                width: 91.66%;
+            }
+            .col-12 {
+                width: 99%;
+            }
+        }
+        
+        #menu_control {
+            position: absolute;
+            z-index: -2;
+            opacity: 0;
+        }
+        
+        .header {
+            height: 50px;
+            background-color: #b3d1ff;
+            /*縮小後上方顏色*/
+            position: relative;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        
+        .menu_btn {
+            width: 40px;
+            height: 40px;
+            /*background-color: white;*/
+            display: block;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+        
+        .menu_btn span {
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            display: block;
+            overflow: hidden;
+        }
+        
+        .menu_btn::before {
+            content: " ";
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: blueviolet;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px blueviolet, 0px -8px 0px blueviolet;
+        }
+        
+        nav {
+            width: 100%;
+            height: calc(100vh-50px);
+            background-color: #a59bfa;
+            /*漢堡式選單色*/
+            position: absolute;
+            top: 50px;
+            left: -120%;
+            transition: .5s;
+        }
+        
+        nav a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 10px 20px;
+            border-bottom: 1px solid white;
+            font-family: "Comic Sans MS";
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            background-color: #698cb5
+        }
+        
+        #menu_control:checked~.header nav {
+            left: 0;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: #aaa;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .footer img {
+            width: 3.5%;
+        }
+        
+        .footer p {
+            color: white;
+        }
+        
+        .row img {
+            display: flex;
+            width: 100%;
+        }
+        /* Create four equal columns that floats next to each other */
+        
+        .column {
+            float: left;
+            width: 25%;
+            padding: 20px;
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row h3 {
+            text-align: center;
+        }
+        
+        .row h2 {
+            text-align: center;
+        }
+        
+        .d {
+            text-decoration: line-through;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(224, 127, 36, 0.75), rgba(0, 0, 0, 0));
+        }
+        
+        .col-s-12 img {
+            width: 3%;
+        }
+        
+        .col-12 img {
+            width: 3%;
+        }
+        
+        .row {
+            text-align: center;
+        }
+        /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: flex;
+            }
+        }
+        
+        @media screen and (min-width: 680px) {
+            .menu_btn {
+                display: none;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                background-color: #b3d1ff;
+                align-items: center;
+            }
+            nav {
+                position: relative;
+                left: 0;
+                display: flex;
+                width: auto;
+                height: auto;
+                top: 0;
+                background-color: transparent;
+            }
+            nav a {
+                border-bottom: none;
+            }
+            nav a:hover {
+                background-color: #b3d1ff;
+                color: rgb(43, 43, 250);
+            }
+            .footer img {
+                width: 1.6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="menu_control">
+    <div class="header">
+        <h1 class="logo">
+            <a href="#">WPY</a>
+        </h1>
+        <label for="menu_control" class="menu_btn">
+            <span>選單</span>
+        </label>
+        <nav>
+            <a href="# ">home</a>
+            <a href="https://b10856028.github.io/final/photo">PY's photo</a>
+            <a href="https://b10856028.github.io/final/index">about w</a>
+            <a href="https://www.instagram.com/wpy_www/?hl=zh-tw">聯絡我們</a>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col-3 col-s-4 menu">
+            <img src="photo/IMG_5382.PNG">
+            <h3>批歪(PY)</h3>
+            <center>
+                <p>台南人</p>
+                <p>2001/07/23 (18)</p>
+                <b><p class="d">傳說中糖組成的台南人</p></b>
+                <p>正在趕期末網頁</p>
+            </center>
+        </div>
+
+        <div class="col-6 col-s-8">
+            <img src="photo/IMG_5387.PNG">
+            <h3>什麼是WPY?</h3>
+            <p>WPY是作者(也就是我)本人羅馬拼音的開頭</P>
+            <p>用中文念起來就是搭噗u批歪</p>
+            <p>搭噗u就給龍當名字，批歪留給我自己σ`∀´)σ</p>
+
+        </div>
+
+
+        <div class="col-3 col-s-4">
+            <img src="photo/IMG_5383.PNG">
+            <h3>搭噗ü(w)</h3>
+            <center>
+                <p>謎之龍</p>
+                <p>年約3歲???</p>
+                <b><p class="d">傳說中大腦最小的劍龍?</p></b>
+                <p>正在尋找他的小夥伴</p>
+            </center>
+        </div>
+        <div class="col-7 col-s-8 menu" style="background-color:rgb(238, 240, 146);">
+            <h2>Q&A</h2>
+            <hr>
+            <p>Q1:這些全部都是自己畫的嗎?</p>
+            <p>: 對！這是原創，可是我快沒梗了。･ﾟ･(つд`ﾟ)･ﾟ･</p>
+            <br>
+            <p>Q2:除了w還會有其他角色出現嗎?</p>
+            <p>:會的，w正在尋找他的小夥伴！(我的腦袋裡也在思考要畫什麼)</p>
+            <br>
+            <p>Q3:</p>
+            <p>:</p>
+            <br>
+
+
+        </div>
+        <div class="col-5 col-s-1 menu" style="background-color:rgb(255, 217, 229);">
+            <img src="photo/IMG_5391.PNG">
+            <a href="https://b10856028.github.io/final/index" target="_blank">
+                <h5>點擊看更多漫畫</h5>
+            </a>
+        </div>
+        <div class="col-12 col-s-12 menu" style="background-color:rgb(189, 121, 245);">
+            <h2>聯絡資訊</h2>
+            <a href="https://www.instagram.com/wpy_www/?hl=zh-tw" target="_blank">
+                <p><img src="photo/ig.PNG" width="30%">wpy_www</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+
+        <a href="https://www.instagram.com/wpy_www/?hl=zh-tw" target="_blank">
+            <p><img src="photo/ig.PNG">wpy_www &nbsp&nbsp&nbsp&copy;wpy2020</p>
+        </a>
+
+    </div>
+
+</body>
+
+</html>
